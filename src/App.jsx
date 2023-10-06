@@ -37,21 +37,21 @@ function App() {
       id: 1,
       title: "The Frog & The Ox",
       author: "Aesop",
-      imageUrl: "/images/frog1.jpg", // Add the image URL here
+      imageUrl: "images/frog1.jpg", // Add the image URL here
       desc: "In this fable, a small frog sees an ox and becomes envious of its large size and strength. The frog is so impressed by the ox that it desires to be just as big. It puffs itself up, trying to mimic the size of the ox, but ends up bursting in the process. The moral of the story warns against the dangers of envy and trying to be something we are not.",
     },
     {
       id: 2,
       title: "Belling the Cat",
       author: "Aesop",
-      imageUrl: "/images/cat.jpg", // Add the image URL here
+      imageUrl: "images/cat.jpg", // Add the image URL here
       desc: "This fable revolves around a group of mice who are troubled by a sneaky cat that hunts them. To solve the problem, they propose putting a bell around the cat's neck so they can hear it coming and escape in time. However, while the idea is good, none of the mice volunteer to actually carry out the plan, as it requires getting close to the dangerous cat. The moral of the story highlights the importance of practicality and the need for someone to take action, not just come up with ideas.",
     },
     {
       id: 3,
       title: "The Plane Tree",
       author: "Aesop",
-      imageUrl: "/images/tree.jpg", // Add the image URL here
+      imageUrl: "images/tree.jpg", // Add the image URL here
       desc: "In this fable, a young tree, the Plane Tree, is unhappy with its appearance and wishes to look like other trees, such as the Pine and the Palm. It constantly complains and asks the gods to change its form. The gods respond by transforming the Plane Tree into various shapes, but none of them satisfy the tree. Eventually, the Plane Tree asks to return to its original form, realizing that being content with what it naturally is, is the best way to be. The moral of the story teaches the value of self-acceptance and the futility of constant longing for something different.",
     },
   ]);
