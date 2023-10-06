@@ -1,13 +1,13 @@
-import { FaTimes } from "react-icons/fa"
-import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
+import { FaTimes } from "react-icons/fa";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const StoryView = ({ isClose, id, story }) => {
   // Find the correct story based on the provided id
-  const selectedStory = story.find((item) => item.id === id)
-  const { title, author, imageUrl, desc } = selectedStory
+  const selectedStory = story.find((item) => item.id === id);
+  const { title, author, imageUrl, desc } = selectedStory;
   // Log the selectedStory object to the console
-  const selectedStoryIdString = selectedStory.id.toString()
+  const selectedStoryIdString = selectedStory.id.toString();
 
   return (
     <div className="modal">
@@ -27,20 +27,20 @@ const StoryView = ({ isClose, id, story }) => {
             <p>{desc}</p>
           </div>
           <div className="startButton">
-            <Link to={selectedStoryIdString}>
+            <Link to={"/testtttt/" + selectedStoryIdString}>
               <button>START READING</button>
             </Link>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 StoryView.propTypes = {
   isClose: PropTypes.func,
-}
-export default StoryView
+};
+export default StoryView;
 
 // <div className="musicRecommender">
 //                             <h3>Music Recommendation:</h3>
