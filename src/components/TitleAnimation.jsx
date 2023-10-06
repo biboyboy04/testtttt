@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const TitleAnimation = () => {
-  const text = "AESOP FABLES"; // Corrected the spelling
-  const delay = 200; // Delay in milliseconds between each character
+  const text = "AaESOP FABLES";
+  const delay = 200;
 
   const [displayText, setDisplayText] = useState("");
 
