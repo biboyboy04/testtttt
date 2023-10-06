@@ -10,6 +10,8 @@ import Loading from "./components/Loading";
 import BrandSlider from "./components/BrandSlider";
 import Footer from "./components/footer";
 
+import { Link, Outlet } from "react-router-dom";
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStoryId, setSelectedStoryId] = useState(null);
@@ -158,6 +160,7 @@ function App() {
           </ParallaxLayer>
         </Parallax>
       )}
+      <Outlet />
     </div>
   );
 }
