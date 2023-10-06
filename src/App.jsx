@@ -67,6 +67,7 @@ function App() {
 
   return (
     <div>
+      <h1>Working</h1>
       {/* <Navbar />  diabled for now*/}
       {loading ? (
         <Loading loading={loading} />
