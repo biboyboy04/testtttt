@@ -137,7 +137,7 @@ body {
 
 /* backgrounds */
 #grass {
-  background-image: url("images/grass.png");
+  background-image: url("/images/grass.png");
   background-size: auto 350px;
   background-repeat: space-between;
   height: 100vh;
