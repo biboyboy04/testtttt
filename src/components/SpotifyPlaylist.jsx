@@ -6,10 +6,12 @@ import {
 } from "../scripts/emotionAnalysis.js";
 import { slideEmbed } from "../scripts/utils.js";
 import { changePlaylist } from "../scripts/utils.js";
+import TopRightEmotion from "./TopRightEmotion.jsx";
 
 function EmotionPlaylist(storyTexts) {
   const [emotionResult, setEmotionResult] = useState("");
   const [isDown, setIsDown] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // State to track when loading the prediction
   //   const [textInput, setTextInput] = useState("");
 
   useEffect(() => {
@@ -18,6 +20,7 @@ function EmotionPlaylist(storyTexts) {
       const model = await loadModel();
       const tokenizer = await loadTokenizer();
       const prediction = predict(storyTexts, model, tokenizer);
+      setIsLoading(false);
       setEmotionResult(prediction);
       console.log(prediction);
       handlePlaylistChange(prediction);
@@ -46,6 +49,7 @@ function EmotionPlaylist(storyTexts) {
           <i
             id="arrowIcon"
             className={`fa-solid fa-arrow-${isDown ? "up" : "down"} fa-xl`}
+            style={{ color: "#E1E1E1" }}
           ></i>
         </div>
         <iframe
@@ -62,6 +66,14 @@ function EmotionPlaylist(storyTexts) {
           loading="lazy"
         ></iframe>
       </div>
+
+      {/* Show loading message while waiting for prediction */}
+      {isLoading && <div>Loading emotion prediction...</div>}
+
+      {/* Show the TopRightEmotion component only after the prediction is ready */}
+      {!isLoading && emotionResult !== undefined && (
+        <TopRightEmotion emotion={emotionResult} />
+      )}
     </div>
   );
 }

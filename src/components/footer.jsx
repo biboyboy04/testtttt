@@ -1,12 +1,12 @@
-const footer = () => {
+const Footer = () => {
   return (
     <>
       <footer className="footer">
         <div className="container">
-                  <div className="row">
-                      <div className="footer-col">
-                          <img src="images/aduLogo.jpg" alt="Adamson Logo"  />
-                      </div>
+          <div className="row">
+            <div className="footer-col">
+              <img src="images/aduLogo.jpg" alt="Adamson Logo" />
+            </div>
             <div className="footer-col">
               <h4>Development Team</h4>
               <ul>
@@ -28,11 +28,14 @@ const footer = () => {
               <h4>Capstone Project</h4>
               <ul>
                 <li>
-                  <a href="#">Enriched Electronic Fables for Children through BI-LSTM Emotional Analysis in a Music Recommender System</a>
+                  <a href="#">
+                    Enriched Electronic Fables for Children through BI-LSTM
+                    Emotional Analysis in a Music Recommender System
+                  </a>
                 </li>
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h4>Contact us</h4>
               <div className="social-links">
@@ -60,7 +63,7 @@ const footer = () => {
         </div>
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default footer
+export default Footer;

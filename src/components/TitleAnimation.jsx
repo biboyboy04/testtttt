@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const TitleAnimation = () => {
-  const text = "AaESOP FABLES";
+  const text = "A'ESOP FABLES";
   const delay = 200;
 
   const [displayText, setDisplayText] = useState("");

@@ -24,7 +24,7 @@ function App() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 0);
   }, []);
 
   const toggleModal = () => {
@@ -150,6 +150,7 @@ function App() {
             />
             <BrandSlider />
             <Footer />
+
             {isModalOpen && (
               <StoryView
                 isClose={toggleModal}
