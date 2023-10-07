@@ -37,17 +37,29 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const handleLoad = () => {
-      console.log("WEBSITE IS LOADEDDD");
+    setLoading(true);
+
+    setTimeout(() => {
       setLoading(false);
-    };
+    }, 5000);
+  }, []);
 
+  useEffect(() => {
     // Add a load event listener to ensure all assets are loaded
-    window.addEventListener("load", handleLoad);
+    window.addEventListener("load", () => {
+      setLoading(false);
+    });
 
-    // Cleanup event listener on component unmount
+    // Resize handling
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    // Cleanup event listeners on component unmount
     return () => {
-      window.removeEventListener("load", handleLoad);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", () => {
+        setLoading(false);
+      });
     };
   }, []);
 
