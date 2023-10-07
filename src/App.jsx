@@ -23,7 +23,7 @@ function App() {
   const handleResize = () => {
     const isMobile = window.innerWidth < 600;
     //2.46 for desktop and 2.8 for mobile
-    const newPages = isMobile ? 2.8 : 2.46;
+    const newPages = isMobile ? 3 : 2.46;
     setParallaxPages(newPages);
   };
 
