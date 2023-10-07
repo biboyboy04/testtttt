@@ -28,21 +28,26 @@ function App() {
   };
 
   useEffect(() => {
-    // Add a load event listener to ensure all assets are loaded
-    window.addEventListener("load", () => {
-      setLoading(false);
-    });
-
-    // Resize handling
     window.addEventListener("resize", handleResize);
     handleResize();
 
-    // Cleanup event listeners on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("load", () => {
-        setLoading(false);
-      });
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      console.log("WEBSITE IS LOADEDDD");
+      setLoading(false);
+    };
+
+    // Add a load event listener to ensure all assets are loaded
+    window.addEventListener("load", handleLoad);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
