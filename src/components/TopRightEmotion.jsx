@@ -10,15 +10,15 @@ const TopRightEmotion = ({ emotion }) => {
   };
 
   const emotionImages = {
-    joy: "../../public/images/joy.png",
-    sadness: "../../public/images/sadness.png",
-    anger: "../../public/images/anger.png",
-    fear: "../../public/images/fear.png",
+    joy: "images/joy.png",
+    sadness: "images/sadness.png",
+    anger: "images/anger.png",
+    fear: "images/fear.png",
   };
 
   // Set default text and image if the emotion is not recognized
   const defaultText = "Feeling Unknown";
-  const defaultImageSrc = "../images/unknown.jpg";
+  const defaultImageSrc = "images/unknown.jpg";
 
   // Get the text and image source based on the emotion
   const text = emotionTexts[emotion] || defaultText;
