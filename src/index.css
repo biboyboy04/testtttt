@@ -884,11 +884,6 @@ ul {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .aesop {
-    font-size: 25px;
-    text-align: center;
-    margin-top: -25vh;
-  }
   #grass,
   #grass2l,
   #grass2r,
@@ -931,22 +926,43 @@ ul {
     width: 70vh;
     margin-left: -90px;
   }
+  .animation {
+    z-index: -11000;
+  }
+
+  .animation_layer.parallax {
+    z-index: -10000;
+  }
+
+  .aesop {
+    font-size: 25px;
+    text-align: center;
+    margin-top: -25vh;
+  }
 
   /* story cards */
   .image-grid {
     flex-wrap: nowrap;
     padding: 1rem;
     flex-direction: column;
+    z-index: 1;
+  }
+
+  .image-grid-title {
+    margin-top: 10rem;
+    padding: 1rem;
+    width: 70%;
+    height: auto;
   }
 
   /* Technologies  */
   .sliderContainer {
-    margin-top: 45vh;
-    height: 30vh;
+    margin-top: 105vw;
+    height: 60vw;
   }
 
   .footer {
-    margin-top: 8vh;
+    margin-top: 16vw;
     position: relative;
     bottom: 0;
   }

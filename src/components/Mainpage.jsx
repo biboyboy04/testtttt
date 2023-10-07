@@ -1,24 +1,24 @@
 // import { useState } from 'react'
-import PropTypes from "prop-types"
-import Fables from "./fables"
+import PropTypes from "prop-types";
+import Fables from "./fables";
 const Mainpage = ({ isOpen, story, viewStory }) => {
   return (
     <div className="background-image fade-in">
       <div className="aesop storyTitle">
-         <h1>STORIES</h1>       
+        <h1 className="image-grid-title">STORIES</h1>
         <div className="image-grid">
           <Fables story={story} isOpen={isOpen} viewStory={viewStory} />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Mainpage.propTypes = {
   isOpen: PropTypes.func,
-}
+};
 
-export default Mainpage
+export default Mainpage;
 
 {
   /* <div className="image-container">
