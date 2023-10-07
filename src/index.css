@@ -628,6 +628,7 @@ body {
 }
 .storyContent p {
   font-size: 40px;
+  line-height: 2;
 }
 .backBtncontainer {
   position: fixed;
@@ -703,7 +704,7 @@ body {
 }
 
 .spotifyContainer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1052,6 +1053,33 @@ ul {
     margin-right: 1rem;
     width: 9rem;
     height: 3rem;
+  }
+
+  /* Mobile Reading */
+
+  .storyContent p {
+    font-size: 1rem;
+  }
+
+  .top-right-container {
+    width: 9vh;
+    height: auto;
+    font-size: 0.65rem;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+  }
+
+  .top-right-container img {
+    width: 95%;
+    height: auto;
+    font-size: 1rem;
+  }
+
+  .backBtncontainer {
+  }
+  .backBtn {
+    font-size: 2.5rem;
   }
 }
 
