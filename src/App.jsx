@@ -17,7 +17,7 @@ function App() {
   const [selectedStoryId, setSelectedStoryId] = useState(null);
 
   //loading screen
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [parallaxPages, setParallaxPages] = useState(2.46);
 
   const handleResize = () => {
@@ -42,25 +42,6 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 5000);
-  }, []);
-
-  useEffect(() => {
-    // Add a load event listener to ensure all assets are loaded
-    window.addEventListener("load", () => {
-      setLoading(false);
-    });
-
-    // Resize handling
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    // Cleanup event listeners on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("load", () => {
-        setLoading(false);
-      });
-    };
   }, []);
 
   const toggleModal = () => {
