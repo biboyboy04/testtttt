@@ -41,7 +41,7 @@ function App() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 0);
+    }, 1500);
   }, []);
 
   const toggleModal = () => {
