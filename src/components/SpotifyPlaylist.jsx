@@ -19,7 +19,7 @@ function EmotionPlaylist(storyTexts) {
     async function loadModelAndTokenizer() {
       const model = await loadModel();
       const tokenizer = await loadTokenizer();
-      const prediction = predict(storyTexts, model, tokenizer);
+      const prediction = await predict(storyTexts, model, tokenizer);
       setIsLoading(false);
       setEmotionResult(prediction);
       console.log(prediction);
@@ -45,7 +45,10 @@ function EmotionPlaylist(storyTexts) {
   return (
     <div className="spotifyContainer">
       {isLoading ? (
-        <h1> Predicting emotion...</h1>
+        <h1 style={{ color: "white", fontFamily: "montserrat" }}>
+          {" "}
+          Predicting emotion...
+        </h1>
       ) : (
         <div id="spotifyWrapper" data-is-down={false}>
           <div id="arrowUpDown" onClick={handleSlideEmbed}>

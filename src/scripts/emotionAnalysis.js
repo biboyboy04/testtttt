@@ -96,7 +96,7 @@ function addArraysElementWise(arr1, arr2) {
   return result;
 }
 
-export function predict(text, model, tokenizer) {
+export async function predict(text, model, tokenizer) {
   text = text.storyText;
   if (!model) {
     console.error("Model is not available.");
