@@ -13,7 +13,7 @@ const Story1 = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 0);
   }, []);
 
   return (

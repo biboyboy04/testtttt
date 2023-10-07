@@ -7,7 +7,6 @@ import {
 import { slideEmbed } from "../scripts/utils.js";
 import { changePlaylist } from "../scripts/utils.js";
 import TopRightEmotion from "./TopRightEmotion.jsx";
-import Loading from "../components/Loading";
 
 function EmotionPlaylist(storyTexts) {
   const [emotionResult, setEmotionResult] = useState("");
@@ -44,36 +43,31 @@ function EmotionPlaylist(storyTexts) {
   const spotifyPlaylistUrl = "";
 
   return (
-    <div>
+    <div className="spotifyContainer">
       {isLoading ? (
-        <Loading loading={isLoading} />
+        <h1> Predicting emotion...</h1>
       ) : (
-        <div className="spotifyContainer">
-          <div id="spotifyWrapper" data-is-down={false}>
-            <div id="arrowUpDown" onClick={handleSlideEmbed}>
-              <i
-                id="arrowIcon"
-                className={`fa-solid fa-arrow-${isDown ? "up" : "down"} fa-xl`}
-                style={{ color: "#E1E1E1" }}
-              ></i>
-            </div>
-            <iframe
-              id="spotifyPlaylist"
-              style={{
-                borderRadius: "12px",
-                width: "100%",
-                height: "100%",
-              }}
-              src={spotifyPlaylistUrl}
-              frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+        <div id="spotifyWrapper" data-is-down={false}>
+          <div id="arrowUpDown" onClick={handleSlideEmbed}>
+            <i
+              id="arrowIcon"
+              className={`fa-solid fa-arrow-${isDown ? "up" : "down"} fa-xl`}
+              style={{ color: "#E1E1E1" }}
+            ></i>
           </div>
-          {/* Show loading message while waiting for prediction */}
-          {isLoading && <div>Loading emotion prediction...</div>}
-
+          <iframe
+            id="spotifyPlaylist"
+            style={{
+              borderRadius: "12px",
+              width: "100%",
+              height: "100%",
+            }}
+            src={spotifyPlaylistUrl}
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
           {/* Show the TopRightEmotion component only after the prediction is ready */}
           {!isLoading && emotionResult !== undefined && (
             <TopRightEmotion emotion={emotionResult} />
