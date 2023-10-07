@@ -902,54 +902,140 @@ ul {
   #mnt1,
   #mnt2,
   #back {
+    /* width 0 so that there are few elements */
+    /* more elements = more boundaries(picutre will be cut) */
+    height: 100vh;
     width: 0vh;
   }
   #grass {
-    height: 100vh;
     width: 100vh;
   }
   #grass2l {
-    height: 100vh;
     width: 100vh;
   }
   #tree2-2l {
-    height: 100vh;
     width: 70vh;
     margin-left: 50px;
   }
   #tree1 {
-    height: 100vh;
     width: 100vh;
   }
 
   #tree1-2r {
-    height: 100vh;
     width: 100vh;
     margin-left: -90px;
   }
 
   #sun {
-    height: 100vh;
-    width: 60vh;
-    margin-left: -100px;
+    height: 60vh;
+    width: 70vh;
+    margin-left: -90px;
   }
 
+  /* story cards */
   .image-grid {
     flex-wrap: nowrap;
     padding: 1rem;
     flex-direction: column;
   }
 
+  /* Technologies  */
   .sliderContainer {
+    margin-top: 45vh;
+    height: 30vh;
   }
 
   .footer {
-    margin-top: 20vh;
+    margin-top: 8vh;
     position: relative;
     bottom: 0;
   }
+  /* remove adamson logo as it takes up too much space for the footer info to fit in */
   .row > div:first-child {
     display: none;
+  }
+
+  /* add bg color that matches the footer because on some phones the footer is not fixed
+  so the space below is white */
+  .animation {
+    background-color: #162b04;
+  }
+
+  .row {
+    padding: 0.1rem;
+    text-align: center;
+  }
+
+  .footer-col ul {
+    padding: 0;
+  }
+
+  /* Modal */
+
+  .storyProfile {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    border: none;
+  }
+  .modal-header {
+    padding: 2px 10px;
+  }
+
+  .modal-header svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .storyProfile img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .storyProfile h4,
+  .storyProfile h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 1rem;
+    height: auto;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .storyDescription {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .storyDescription h4 {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .startButton {
+    justify-content: flex-end;
+  }
+
+  .startButton button {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 9rem;
+    height: 3rem;
   }
 }
 

@@ -18,6 +18,23 @@ function App() {
 
   //loading screen
   const [loading, setLoading] = useState(false);
+  const [parallaxPages, setParallaxPages] = useState(2.46);
+
+  const handleResize = () => {
+    const isMobile = window.innerWidth < 600;
+    //2.46 for desktop and 2.8 for mobile
+    const newPages = isMobile ? 2.8 : 2.46;
+    setParallaxPages(newPages);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -71,7 +88,12 @@ function App() {
       {loading ? (
         <Loading loading={loading} />
       ) : (
-        <Parallax pages={2.46} className="animation" ref={ref}>
+        <Parallax
+          pages={parallaxPages}
+          className="animation"
+          ref={ref}
+          style={{ overflow: "scroll", left: "0" }}
+        >
           <ParallaxLayer
             offset={0}
             speed={0.5}
