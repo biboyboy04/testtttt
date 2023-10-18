@@ -2,7 +2,7 @@ import * as tf from "@tensorflow/tfjs";
 
 export async function loadModel() {
   try {
-    const tfjsModel = await tf.loadLayersModel("models/go_emotion/model.json");
+    const tfjsModel = await tf.loadLayersModel("models/emolit/model.json");
     console.log("Model successfully loaded!");
     return tfjsModel;
   } catch (error) {
@@ -40,7 +40,7 @@ function padSequences(arr, maxlen) {
 
 export async function loadTokenizer() {
   try {
-    const tokenizer = await fetch("models/go_emotion/tokenizer.json");
+    const tokenizer = await fetch("models/emolit/tokenizer.json");
     const tokenizerData = await tokenizer.json();
     console.log("Tokenizer data loaded!");
     return tokenizerData;
